@@ -9,11 +9,10 @@
  */
 angular.module('herokuTestApp')
   .controller('HeaderCtrl',['$scope' , 'ngDialog', function ($scope, ngDialog) {
-    console.log("vao day");
     $scope.clickToOpen = function () {
         ngDialog.open({
             template: 'views/modal.html',
-						className: 'ngdialog-theme-default ngdialog-theme-custom'
+			className: 'ngdialog-theme-default ngdialog-theme-custom'
         });
     };
   }]);

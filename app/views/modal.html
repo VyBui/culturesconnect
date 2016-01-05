@@ -1,15 +1,85 @@
-  <div class="ngdialog-message">
-    <h2>Native Angular.js solution</h2>
-    <div>With ngDialog you don't need jQuery or Bootstrap to create dialogs for <code>ng-app:</code></div>
-    <ul class="mt">
-      <li>Use it in controllers, factories or directives</li>
-      <li>Create your own directives</li>
-      <li>Style all UI and templates</li>
-      <li>Configure themes</li>
-      <li>Add animations and effects</li>
-    </ul>
-    <div class="mt">Module is shipped with both <code>ngDialog</code> service and default directive.</div>
-  </div>
-  <div class="ngdialog-buttons mt">
-    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="next()">►</button>
-  </div>
+<form id="id-register-form" class="cd-form" action="/users/triip_registration/?auth=registration" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="M6PHokm8zWMhcsFXJWe53uKrgg4cJEci">
+
+    <p class="fieldset" style="margin-top:0">
+        <input id="id-signup-facebook-button" class="full-width" type="button" onclick="facebook_login('False');" value="Sign up with Facebook">
+    </p>
+
+    <h2><span>or</span></h2>
+
+    <p class="fieldset">
+        <label class="image-replace cd-username" for="first_name">First Name</label>
+        <input id="id_first_name" maxlength="100" name="first_name" class="full-width has-padding has-border" type="text" placeholder="First Name" required="">
+        <span id="id_first_name_error" class="cd-error-message">Error message here!</span>
+    </p>
+
+    <p class="fieldset">
+        <label class="image-replace cd-username" for="last_name">Last Name</label>
+        <input id="id_last_name" maxlength="100" name="last_name" class="full-width has-padding has-border" type="text" placeholder="Last Name" required="">
+        <span id="id_last_name_error" class="cd-error-message">Error message here!</span>
+    </p>
+
+    <p class="fieldset">
+        <label class="image-replace cd-email" for="signup-email">E-mail</label>
+        <input id="id_username" class="full-width has-padding has-border" maxlength="300" name="username" placeholder="E-mail" type="email" required="">
+        <span id="id_username_error" class="cd-error-message">Error message here!</span>
+    </p>
+
+    <p class="fieldset">
+        <label class="image-replace cd-password" for="signup-password">Password</label>
+        <input class="full-width has-padding has-border" id="signup-password" type="password" placeholder="Password" required="">
+        <a class="hide-password">Show</a>
+        <span id="signup-password_error" class="cd-error-message">Error message here!</span>
+    </p>
+
+    <p class="fieldset">
+        <label style="font-size: 11pt" for="accept-terms">By creating an account you agree to Triip’s
+            <a href="/privacy-policy/">Terms of Service</a> and <a href="/privacy-policy/">Privacy Policy</a>.
+        </label>
+    </p>
+
+    <p id="id_register_button_fieldset" class="fieldset">
+        <!--<input class="full-width" type="submit" value="Create account">-->
+        <button id="id_register_button" class="ladda-button" data-style="zoom-out" type="submit">
+            <span class="ladda-label">Create account</span>
+        <span class="ladda-spinner"></span></button>
+    </p>
+</form>
+
+<!-- login -->
+<form id="id-login-form" class="cd-form" action="/users/login/?auth=login&amp;next=/" method="post">
+
+    <p class="fieldset">
+        <input id="id-login-facebook" class="full-width" type="button" onclick="facebook_login('False');" value="Login with Facebook">
+    </p>
+
+    <h2><span>or</span></h2>
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="M6PHokm8zWMhcsFXJWe53uKrgg4cJEci">
+    
+
+    <p class="fieldset">
+        <label class="image-replace cd-email" for="id_username">E-mail</label>
+        <input class="full-width has-padding has-border" id="id_username" type="email" name="username" placeholder="E-mail">
+        <span class="cd-error-message">Error message here!</span>
+    </p>
+
+    <p class="fieldset">
+        <label class="image-replace cd-password" for="id_password">Password</label>
+        <input class="full-width has-padding has-border" id="id_password" name="password" type="password" placeholder="Password">
+        
+        <a class="hide-password">Hide</a>
+        <span class="cd-error-message">Error message here!</span>
+    </p>
+
+    
+
+    <p class="fieldset">
+        <input type="checkbox" id="remember-me" checked="">
+        <label for="remember-me">Remember me</label>
+    </p>
+
+    <p class="fieldset">
+        <input id="id-login-button" class="full-width" type="submit" value="Login">
+    </p>
+</form>

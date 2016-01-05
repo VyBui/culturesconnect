@@ -16,12 +16,34 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
+    'ui.router',
     'ngSanitize',
     'angular-flexslider',
     'parse-angular',
     'ngDialog'
   ])
-  .config(function ($routeProvider) {
+  .run(['$rootScope', '$state', '$stateParams',function ($rootScope, $state, $stateParams){
+    //set root state for checking state change on the navigator
+    //@see layout/header.html
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+
+    //capture state change, check authentication
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+      var requireLogin  = toState.data.requireLogin;
+      var currentUser   = Parse.User.current();
+      //console.log(currentUser);
+      if (requireLogin && currentUser === null) {
+        event.preventDefault();
+        return $state.go('app.login');
+      }
+      else {
+        $rootScope.currentUser = currentUser;
+        //console.log();
+      }
+    });
+  }])
+  .config(['$routeProvider', '$stateProvider', function($routeProvider, $stateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -49,4 +71,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
