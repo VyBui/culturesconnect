@@ -9,10 +9,16 @@
  */
 angular.module('herokuTestApp')
   .controller('HeaderCtrl',['$scope' , 'ngDialog', function ($scope, ngDialog) {
-    $scope.clickToOpen = function () {
+    $scope.clickToOpen = function (option) {
         ngDialog.open({
             template: 'views/modal.html',
-			className: 'ngdialog-theme-default ngdialog-theme-custom'
+			className: 'ngdialog-theme-default ngdialog-theme-custom',
+			controller: 'UsersCtrl',
+			resolve: {
+	         	option: function () {
+	           	return option;
+         }
+       }
         });
     };
   }]);

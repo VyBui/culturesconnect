@@ -1,6 +1,5 @@
-<form id="id-register-form" class="cd-form" action="/users/triip_registration/?auth=registration" method="post">
+<form id="id-register-form" class="cd-form" ng-if="option=='signup'" ng-submit="signUp(user)">
     <input type="hidden" name="csrfmiddlewaretoken" value="M6PHokm8zWMhcsFXJWe53uKrgg4cJEci">
-
     <p class="fieldset" style="margin-top:0">
         <input id="id-signup-facebook-button" class="full-width" type="button" onclick="facebook_login('False');" value="Sign up with Facebook">
     </p>
@@ -9,27 +8,22 @@
 
     <p class="fieldset">
         <label class="image-replace cd-username" for="first_name">First Name</label>
-        <input id="id_first_name" maxlength="100" name="first_name" class="full-width has-padding has-border" type="text" placeholder="First Name" required="">
-        <span id="id_first_name_error" class="cd-error-message">Error message here!</span>
+        <input id="id_first_name" maxlength="100" name="first_name" class="full-width has-padding has-border" type="text" placeholder="First Name" required="" ng-model="user.first_name">
     </p>
 
     <p class="fieldset">
         <label class="image-replace cd-username" for="last_name">Last Name</label>
-        <input id="id_last_name" maxlength="100" name="last_name" class="full-width has-padding has-border" type="text" placeholder="Last Name" required="">
-        <span id="id_last_name_error" class="cd-error-message">Error message here!</span>
+        <input id="id_last_name" maxlength="100" name="last_name" class="full-width has-padding has-border" type="text" placeholder="Last Name" required="" ng-model="user.last_name">
     </p>
 
     <p class="fieldset">
         <label class="image-replace cd-email" for="signup-email">E-mail</label>
-        <input id="id_username" class="full-width has-padding has-border" maxlength="300" name="username" placeholder="E-mail" type="email" required="">
-        <span id="id_username_error" class="cd-error-message">Error message here!</span>
+        <input id="id_username" class="full-width has-padding has-border" maxlength="300" name="username" placeholder="E-mail" type="email" required="" ng-model="user.testEmail">
     </p>
 
     <p class="fieldset">
         <label class="image-replace cd-password" for="signup-password">Password</label>
-        <input class="full-width has-padding has-border" id="signup-password" type="password" placeholder="Password" required="">
-        <a class="hide-password">Show</a>
-        <span id="signup-password_error" class="cd-error-message">Error message here!</span>
+        <input class="full-width has-padding has-border" id="signup-password" type="password" placeholder="Password" required="" ng-model="user.password">
     </p>
 
     <p class="fieldset">
@@ -47,7 +41,7 @@
 </form>
 
 <!-- login -->
-<form id="id-login-form" class="cd-form" action="/users/login/?auth=login&amp;next=/" method="post">
+<form id="id-login-form" class="cd-form" ng-if="option=='signin'">
 
     <p class="fieldset">
         <input id="id-login-facebook" class="full-width" type="button" onclick="facebook_login('False');" value="Login with Facebook">
@@ -61,15 +55,11 @@
     <p class="fieldset">
         <label class="image-replace cd-email" for="id_username">E-mail</label>
         <input class="full-width has-padding has-border" id="id_username" type="email" name="username" placeholder="E-mail">
-        <span class="cd-error-message">Error message here!</span>
     </p>
 
     <p class="fieldset">
         <label class="image-replace cd-password" for="id_password">Password</label>
         <input class="full-width has-padding has-border" id="id_password" name="password" type="password" placeholder="Password">
-        
-        <a class="hide-password">Hide</a>
-        <span class="cd-error-message">Error message here!</span>
     </p>
 
     

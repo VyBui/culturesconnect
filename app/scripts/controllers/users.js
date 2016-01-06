@@ -8,7 +8,7 @@
  * Controller of the herokuTestApp
  */
 angular.module('herokuTestApp')
-  .controller('UsersCtrl', ['$rootScope', '$scope', '$state', '$http', 'AuthService', '$window', function ($rootScope, $scope, $state, $http, AuthService, $window) {
+  .controller('UsersCtrl', ['$rootScope', '$scope', '$state', '$http', 'AuthService', '$window', 'option', function ($rootScope, $scope, $state, $http, AuthService, $window, option) {
     /*
 		functionName: signup
 
@@ -19,11 +19,6 @@ angular.module('herokuTestApp')
 		user.set("email", form.testEmail.toLowerCase());
 		user.set("password", form.password);
 		user.set("first_name", form.first_name);
-		user.set("last_name", form.last_name);
-		user.set("address", form.address);
-		user.set("city", form.city);
-		user.set("state", form.state);
-		user.set("zipcode", parseInt(form.zipcode));
 		/*
 			Show Loading
 		*/
@@ -36,6 +31,8 @@ angular.module('herokuTestApp')
 		user.signUp(null, {
 			success: function(user) {
 				// Notify AngularJS to sync currentUser
+				console.log("user day");
+				console.log(user);
 				$scope.promise = null;
 				$scope.$apply();
 				// Remove Everything
@@ -47,15 +44,12 @@ angular.module('herokuTestApp')
 				publicReadACL.setWriteAccess( user.id, true);
 				publicReadACL.setReadAccess( user.id, true);
 				user.setACL(publicReadACL);
-				$state.go('app.dashboard');
+				//$state.go('app.dashboard');
 			},
 			error: function(user, error) {
 				//alert("Unable to sign up:  " + error.code + " " + error.message);
 				if(error.message === "username "+ user.get("email")+" already taken"){
 					$scope.existEmail = user.get("email");
-					$scope.promise = null;
-					$scope.stepTwo = false;
-					$scope.step = 1;
 				}
 			}
 		});
@@ -167,5 +161,9 @@ angular.module('herokuTestApp')
 		Parse.User.logOut();
 		$window.location.reload();
 		$scope.loginStatus = null;
+	}
+
+	if(typeof option !== 'undefined') {
+		$scope.option = option;
 	}
   }]);

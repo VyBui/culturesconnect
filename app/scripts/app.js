@@ -20,7 +20,8 @@ angular
     'ngSanitize',
     'angular-flexslider',
     'parse-angular',
-    'ngDialog'
+    'ngDialog', 
+    'LocalStorageModule'
   ])
   .run(['$rootScope', '$state', '$stateParams',function ($rootScope, $state, $stateParams){
     //set root state for checking state change on the navigator
