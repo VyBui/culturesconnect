@@ -1,7 +1,12 @@
 <form id="id-register-form" class="cd-form" ng-if="option=='signup'" ng-submit="signUp(user)">
     <input type="hidden" name="csrfmiddlewaretoken" value="M6PHokm8zWMhcsFXJWe53uKrgg4cJEci">
     <p class="fieldset" style="margin-top:0">
-        <input id="id-signup-facebook-button" class="full-width" type="button" onclick="facebook_login('False');" value="Sign up with Facebook">
+      <div class="social-wrap c">
+        <button class="facebook">Sign up <em>w/</em> Facebook</button>
+        <div>
+          <google-plus-signin clientid="217381421837-mfsplrg87t3o2u9toscpgrbsoh5ev42m.apps.googleusercontent.com"></google-plus-signin>
+        </div>
+      </div>
     </p>
 
     <h2><span>or</span></h2>
@@ -27,9 +32,9 @@
     </p>
 
     <p class="fieldset">
-        <label style="font-size: 11pt" for="accept-terms">By creating an account you agree to Triip’s
+        <!-- <label style="font-size: 11pt" for="accept-terms">By creating an account you agree to Culture Connect's
             <a href="/privacy-policy/">Terms of Service</a> and <a href="/privacy-policy/">Privacy Policy</a>.
-        </label>
+        </label> -->
     </p>
 
     <p id="id_register_button_fieldset" class="fieldset">
@@ -44,13 +49,16 @@
 <form id="id-login-form" class="cd-form" ng-if="option=='signin'">
 
     <p class="fieldset">
-        <input id="id-login-facebook" class="full-width" type="button" onclick="facebook_login('False');" value="Login with Facebook">
+      <div class="social-wrap c">
+        <button class="facebook" ng-click="loginWithFacebook()">Sign in <em>w/</em> Facebook</button>
+        <google-plus-signin clientid="217381421837-mfsplrg87t3o2u9toscpgrbsoh5ev42m.apps.googleusercontent.com"></google-plus-signin>
+      </div>
     </p>
 
     <h2><span>or</span></h2>
 
     <input type="hidden" name="csrfmiddlewaretoken" value="M6PHokm8zWMhcsFXJWe53uKrgg4cJEci">
-    
+
 
     <p class="fieldset">
         <label class="image-replace cd-email" for="id_username">E-mail</label>
@@ -62,7 +70,7 @@
         <input class="full-width has-padding has-border" id="id_password" name="password" type="password" placeholder="Password">
     </p>
 
-    
+
 
     <p class="fieldset">
         <input type="checkbox" id="remember-me" checked="">

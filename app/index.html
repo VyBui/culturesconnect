@@ -18,6 +18,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="herokuTestApp">
+    <!-- Facebook intergration -->
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,8 +31,8 @@
                     <div class="header__info__items-right">
                         <div class=
                         "header__info__item header__info__item--delimiter header__info__item--social-icons">
-                        <a ng-click="clickToOpen('signin');">SIGN IN</a>
-                        <a ng-click="clickToOpen('signup');">SIGN UP</a>
+                        <a class="link" ng-click="clickToOpen('signin');">SIGN IN</a>
+                        <a class="link" ng-click="clickToOpen('signup');">SIGN UP</a>
                         <a title="Become a cultures Connector" class="becomeConnector">Become a culture Connector</a>
                         </div>
                     </div>
@@ -428,6 +429,7 @@
     <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-directive.g-signin/google-plus-signin.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -445,4 +447,28 @@
         <script src="scripts/controllers/users.js"></script>
         <!-- endbuild -->
 </body>
+<script>
+  // Initialize Parse
+  Parse.initialize("35gDWedNY3uVt6bHHHjEIBeGvHp7BoaN1wXbLF2n", "Zxgz4cKELphn9KlrsygEfyzrrvhU6rySx4O6zEMf");
+
+  window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({ // this line replaces FB.init({
+      appId      : '539497246223460', // Facebook App ID
+      status     : true,  // check Facebook Login status
+      cookie     : true,  // enable cookies to allow Parse to access the session
+      xfbml      : true,  // initialize Facebook social plugins on the page
+      version    : 'v2.3' // point to the latest Facebook Graph API version
+    });
+
+        // Run code after the Facebook SDK is loaded.
+  };
+
+      (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 </html>

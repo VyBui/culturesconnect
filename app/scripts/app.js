@@ -1,7 +1,5 @@
 'use strict';
 
-//initial parse
-Parse.initialize("35gDWedNY3uVt6bHHHjEIBeGvHp7BoaN1wXbLF2n", "Zxgz4cKELphn9KlrsygEfyzrrvhU6rySx4O6zEMf");
 /**
  * @ngdoc overview
  * @name herokuTestApp
@@ -20,8 +18,9 @@ angular
     'ngSanitize',
     'angular-flexslider',
     'parse-angular',
-    'ngDialog', 
-    'LocalStorageModule'
+    'ngDialog',
+    'LocalStorageModule',
+    'directive.g+signin'
   ])
   .run(['$rootScope', '$state', '$stateParams',function ($rootScope, $state, $stateParams){
     //set root state for checking state change on the navigator
