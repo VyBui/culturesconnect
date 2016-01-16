@@ -56,10 +56,6 @@ angular.module('herokuTestApp')
 	};
 	/*
 
-	*/
-	$scope.termsOfUse = function() {
-	//	$window.open('http://krynkle.herokuapp.com/#/term', '_blank');
-	}
 	//////////////////// END SIGN UP //////////////////////////
 	///////
 	/// LOGIN CTROL
@@ -104,15 +100,27 @@ angular.module('herokuTestApp')
     Parse.FacebookUtils.logIn(null, {
       success: function(user) {
         if (!user.existed()) {
-          $state.go("");
+          FB.api('/me?fields=id,name,email,permissions', function (response) {
+
+              user.set('username', response.name);
+              user.set('email', response.email);
+              user.save();
+            });
         } else {
-          alert("User logged in through Facebook!");
         }
       },
       error: function(user, error) {
         alert("User cancelled the Facebook login or did not fully authorize.");
       }
     });
+  }
+  /*
+    Log out
+  */
+
+  $scope.logOut = function() {
+    Parse.User.logOut();
+    $window.reload();
   }
 
 	$scope.forgotMessage = "Enter your email address and we'll send instructions to reset your password";

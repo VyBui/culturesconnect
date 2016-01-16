@@ -8,7 +8,7 @@
  * Controller of the herokuTestApp
  */
 angular.module('herokuTestApp')
-  .controller('HeaderCtrl',['$scope' , 'ngDialog', function ($scope, ngDialog) {
+  .controller('HeaderCtrl',['$scope' , 'ngDialog', 'AuthService', function ($scope, ngDialog, AuthService) {
     $scope.clickToOpen = function (option) {
         ngDialog.open({
             template: 'views/modal.html',
@@ -21,4 +21,29 @@ angular.module('herokuTestApp')
        }
         });
     };
+
+    $scope.loading = function() {
+        // check if user already loggin.
+        $scope.checkLogin();
+    };
+
+    $scope.checkLogin = function() {
+      // current User
+      $scope.currentUser   = Parse.User.current();
+      if($scope.currentUser === null) {
+        // Show login button
+      }
+
+      else {
+        // check if facebook uers
+        if(typeof $scope.currentUser.attributes.authData.facebook !== 'undefined')
+        {
+          // facebook user
+          console.log($scope.currentUser);
+        }
+        // check if google+ user
+        // check if parse user
+      }
+    }
+
   }]);

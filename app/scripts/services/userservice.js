@@ -10,7 +10,7 @@
 angular.module('herokuTestApp')
   .factory('AuthService', ['$rootScope','$http','$q', '$state', 'localStorageService', function($rootScope, $http, $q, $state, localStorageService){
 
-    // AngularJS will instantiate a singleton by calling "new" on this 
+    // AngularJS will instantiate a singleton by calling "new" on this
     var userService = {};
 
  	/////
@@ -145,6 +145,41 @@ angular.module('herokuTestApp')
 
 		return defer.promise;
 	}
+
+  // Get Facebook Login status
+  userService.getFacebookStatus = function() {
+    var defer = $q.defer();
+    var FacebookStatus= {
+      id:0,
+      accessToken: 0,
+      status: null
+    };
+
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        // the user is logged in and has authenticated your
+        // app, and response.authResponse supplies
+        // the user's ID, a valid access token, a signed
+        // request, and the time the access token
+        // and signed request each expire
+        FacebookStatus.id = response.authResponse.userID;
+        FacebookStatus.accessToken = response.authResponse.accessToken;
+      } else if (response.status === 'not_authorized') {
+        // the user is logged in to Facebook,
+        // but has not authenticated your app
+        FacebookStatus.status = 'not_authorized';
+      } else {
+        // the user isn't logged in to Facebook.
+      }
+
+      defer.resolve(FacebookStatus);
+
+      return defer.promise;
+     });
+  }
+
+  //get facebook user information api
+
 
  	/// return userService
  	return userService;

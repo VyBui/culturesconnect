@@ -32,10 +32,10 @@ angular
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
       var requireLogin  = toState.data.requireLogin;
       var currentUser   = Parse.User.current();
-      //console.log(currentUser);
+      console.log(currentUser);
       if (requireLogin && currentUser === null) {
         event.preventDefault();
-        return $state.go('app.login');
+        //return $state.go('app.login');
       }
       else {
         $rootScope.currentUser = currentUser;

@@ -26,16 +26,20 @@
     <!-- Add your site or application content here -->
     <!-- Add your site or application content here -->
     <header class="header" role="banner" ng-controller="HeaderCtrl">
-            <div class="container">
+            <div class="container" ng-init="loading();">
                 <div class="header__info">
                     <div class="header__info__items-right">
                         <div class=
-                        "header__info__item header__info__item--delimiter header__info__item--social-icons">
-                        <a class="link" ng-click="clickToOpen('signin');">SIGN IN</a>
-                        <a class="link" ng-click="clickToOpen('signup');">SIGN UP</a>
-                        <a title="Become a cultures Connector" class="becomeConnector">Become a culture Connector</a>
+                        "header__info__item header__info__item--delimiter" ng-if='currentUser == null'>
+                          <a class="link" ng-click="clickToOpen('signin');">SIGN IN</a>
+                          <a class="link" ng-click="clickToOpen('signup');">SIGN UP</a>
+                          <a title="Become a cultures Connector" class="becomeConnector">Become a culture Connector</a>
+                        </div>
+                        <div class="header__info__item header__info__item--delimiter" ng-if='currentUser'>
+                          <p>Hello <em>{{currentUser.attributes.username}}</em></p>
                         </div>
                     </div>
+
                 </div>
                 <div class="header__content-wrap">
                     <div class="row">
@@ -440,7 +444,6 @@
         <script src="scripts/services/getdatamainpart2part2.js"></script>
         <script src="scripts/directives/mainsliderimage.js"></script>
         <script src="scripts/directives/addimage.js"></script>
-        <script src="scripts/controllers/userauthentication.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/services/myservice.js"></script>
         <script src="scripts/services/userservice.js"></script>
@@ -463,12 +466,12 @@
         // Run code after the Facebook SDK is loaded.
   };
 
-      (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
 </html>
