@@ -33,7 +33,8 @@
                         "header__info__item header__info__item--delimiter">
                           <a class="link" ng-click="clickToOpen('signin');" ng-if='currentUser == null'>SIGN IN</a>
                           <a class="link" ng-click="clickToOpen('signup');" ng-if='currentUser == null'>SIGN UP</a>
-                          <a ng-if='currentUser' >Hello <em>{{currentUser.attributes.username}} + </em></p>
+                          <a ng-if='currentUser' >Hello <em>{{currentUser.attributes.username}}</em></p>
+                            <a ng-if='currentUser' ng-click="logout();">Log out</em></p>
                           <a title="Become a cultures Connector" class="becomeConnector">Become a culture Connector</a>
                         </div>
                     </div>

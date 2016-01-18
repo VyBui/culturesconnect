@@ -8,7 +8,7 @@
  * Controller of the herokuTestApp
  */
 angular.module('herokuTestApp')
-  .controller('HeaderCtrl',['$scope' , 'ngDialog', 'AuthService', function ($scope, ngDialog, AuthService) {
+  .controller('HeaderCtrl',['$scope' , 'ngDialog', 'AuthService', '$window', function ($scope, ngDialog, AuthService, $window) {
     $scope.clickToOpen = function (option) {
         ngDialog.open({
             template: 'views/modal.html',
@@ -49,6 +49,6 @@ angular.module('herokuTestApp')
     $scope.logout = function() {
       var user = Parse.User.current();
       Parse.User.logOut();
-    
+      $window.reload();
     }
   }]);
