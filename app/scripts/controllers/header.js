@@ -36,7 +36,7 @@ angular.module('herokuTestApp')
 
       else {
         // check if facebook uers
-        if(typeof $scope.currentUser.attributes.authData.facebook !== 'undefined')
+        if(typeof $scope.currentUser.attributes.authData !== 'undefined')
         {
           // facebook user
           console.log($scope.currentUser);

@@ -20,7 +20,8 @@
     "angular-directive.g-signin": "~0.1.1"
   },
   "devDependencies": {
-    "angular-mocks": "^1.4.0"
+    "angular-mocks": "^1.4.0",
+    "susy": "~2.2.11"
   },
   "appPath": "app",
   "moduleName": "herokuTestApp",

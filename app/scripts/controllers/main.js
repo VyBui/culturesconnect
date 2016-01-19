@@ -48,4 +48,15 @@ angular.module('herokuTestApp')
         console.log("vao day");
         ngDialog.open({ template: 'popupTmpl.html',  plain: true });
     };
+
+    $scope.searchForExperience = function(searchForTheDestination, kindOfExperiences) {
+
+
+      // Khi user click tim buttom, goi ham nay ra voi 2 tham so
+      console.log("Dia diem: " + searchForTheDestination);
+      // tim trong database nhung cc co dia diem trung voi bien searchForTheDestination
+      console.log("group: " + kindOfExperiences);
+      // tim trong database nhung cc co dia diem trung voi bien kindofExperience
+    };
+
   }]);
