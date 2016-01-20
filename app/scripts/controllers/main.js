@@ -8,7 +8,7 @@
  * Controller of the herokuTestApp
  */
 angular.module('herokuTestApp')
-  .controller('MainCtrl',[ '$scope', 'getDataMainPart2Part2', function ($scope, getDataMainPart2Part2) {
+  .controller('MainCtrl',[ '$scope', 'getDataMainPart2Part2', 'searchFactory', function ($scope, getDataMainPart2Part2, searchFactory) {
 
     $scope.loadImageForSlider = function() {
         getDataMainPart2Part2.getDatabaseP1()
@@ -51,6 +51,18 @@ angular.module('herokuTestApp')
 
     $scope.searchForExperience = function(searchForTheDestination, kindOfExperiences) {
 
+	
+		searchFactory.getDataWithPlace(searchForTheDestination)
+		.then(function(cc){
+			for (var i = 0; i < cc.length; i++) {
+				var object = cc[i];
+				console.log("CC Id: " + object.id + ", title: " + object.get('title') + ", place: " + object.get('place') + ", score: " + object.get('totalScore'));
+			}
+		}).catch(function(error){
+			console.log(error);
+		}).finally(function(){
+			
+        });
 
       // Khi user click tim buttom, goi ham nay ra voi 2 tham so
       console.log("Dia diem: " + searchForTheDestination);
