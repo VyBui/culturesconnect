@@ -50,25 +50,21 @@ angular.module('herokuTestApp')
     };
 
     $scope.searchForExperience = function(searchForTheDestination, kindOfExperiences) {
-
-	
-		searchFactory.getDataWithPlace(searchForTheDestination)
-		.then(function(cc){
-			for (var i = 0; i < cc.length; i++) {
-				var object = cc[i];
-				console.log("CC Id: " + object.id + ", title: " + object.get('title') + ", place: " + object.get('place') + ", score: " + object.get('totalScore'));
-			}
-		}).catch(function(error){
-			console.log(error);
-		}).finally(function(){
-			
-        });
-
-      // Khi user click tim buttom, goi ham nay ra voi 2 tham so
-      console.log("Dia diem: " + searchForTheDestination);
-      // tim trong database nhung cc co dia diem trung voi bien searchForTheDestination
-      console.log("group: " + kindOfExperiences);
-      // tim trong database nhung cc co dia diem trung voi bien kindofExperience
+      if(searchForTheDestination != "" && typeof searchForTheDestination !== "undefined" && kindOfExperiences != "" && typeof kindOfExperiences !== "undefined") {
+        $scope.listCC = searchFactory.getDataWithBoth(searchForTheDestination, kindOfExperiences);
+        } 
+      else if(searchForTheDestination != "" && typeof searchForTheDestination !== "undefined") {
+        $scope.listCC = searchFactory.getDataWithPlace(searchForTheDestination);
+      }
+      else if(kindOfExperiences != "" && typeof kindOfExperiences !== "undefined") {
+        $scope.listCC = searchFactory.getDataWithKindOfCultural(kindOfExperiences);
+      }
+      else {
+        $scope.listCC = searchFactory.getDataWithoutParameters();
+        console.log($scope.listCC);
+      }
+      console.log("2");
     };
 
-  }]);
+
+}]);

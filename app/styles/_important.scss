@@ -185,3 +185,61 @@ ul.sm-wrap a{
 a.link {
   cursor: pointer;
 }
+
+
+// fix slide
+.flexslider .slides {
+  height: 100%;
+}
+
+//Home page
+.heading {
+  text-align: center;
+  font-family: Oxygen;
+  font-weight: 700;
+  font-style: normal;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
+
+.meetUpHospitable {
+  font-weight: 700;
+  color: #EF2B96;
+}
+
+.becomeALocalCulture {
+  font-weight: 700;
+  color: #EC9E28;
+}
+
+.searchForTheDestination {
+  font-size: 1.75em;
+  color: #AF3595;
+  border: solid 2px #ccc;
+
+}
+input.searchForTheDestination::-webkit-input-placeholder {
+  color: #EF2B96 !important;
+}
+ 
+input.searchForTheDestination:-moz-placeholder { /* Firefox 18- */
+  color: #EF2B96 !important;  
+}
+ 
+input.searchForTheDestination::-moz-placeholder {  /* Firefox 19+ */
+  color: #EF2B96 !important;  
+}
+ 
+input.searchForTheDestination:-ms-input-placeholder {  
+  color: #EF2B96 !important;  
+}
+.kindOfExperiences {
+  font-size: 18px;
+  height: 45px;
+  color: #5FAF35;  
+  border: solid 2px #231111;
+  border-style: dotted;
+}
+  

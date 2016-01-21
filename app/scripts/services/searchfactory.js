@@ -83,7 +83,6 @@ angular.module('herokuTestApp')
 	// Không cần truyền gì cả, get hết luôn order by score
 	searchOptions.getDataWithoutParameters = function () {
 		var defer = $q.defer();
-		var newPlace = searchOptions.stringToRegex(place);
 		var query = new Parse.Query(CulturesConnect);
 		query.addDescending("totalScore");
 		query.find({

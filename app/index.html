@@ -27,20 +27,6 @@
     <!-- Add your site or application content here -->
     <header class="header" role="banner" ng-controller="HeaderCtrl">
             <div class="container" ng-init="loading();">
-                <div class="header__info">
-                    <div class="header__info__items-right">
-                        <div class=
-                        "header__info__item header__info__item--delimiter" ng-if='currentUser == null'>
-                          <a class="link" ng-click="clickToOpen('signin');">SIGN IN</a>
-                          <a class="link" ng-click="clickToOpen('signup');">SIGN UP</a>
-                          <a title="Become a cultures Connector" class="becomeConnector">Become a culture Connector</a>
-                        </div>
-                        <div class="header__info__item header__info__item--delimiter" ng-if='currentUser'>
-                          <p>Hello <em>{{currentUser.attributes.username}}</em></p>
-                        </div>
-                    </div>
-
-                </div>
                 <div class="header__content-wrap">
                     <div class="row">
                         <div class="col-md-12 header__content">
@@ -53,8 +39,16 @@
                                 title="Cultures Connect">
                               </a>
                             </div>
-                            <div class="col-md-4">© Meet up with Hospitable Local Host</div>
-                            <div class="col-md-4">© Become a Local Culture Ambassador</div>
+                            <div class="col-md-8 row">
+                               <div ng-if="currentUser == null">
+                                  <a class="link col-md-6 meetUpHospitable" ng-click="clickToOpen('signin');">© Meet up with Hospitable Local Host</a>
+                                  <a class="link col-md-6 becomeALocalCulture" ng-click="clickToOpen('signin');">© Become a Local Culture Ambassador</a> 
+                               </div> 
+                               <div ng-if="currentUser">
+                                <p>Hello<em>{{currentUser.attributes.username}}</em></p>
+                               </div>
+                            </div>
+                             
                         </div>
 
                         <!-- .header__content -->
