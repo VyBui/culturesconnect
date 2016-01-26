@@ -46,12 +46,11 @@
 </form>
 
 <!-- login -->
-<form id="id-login-form" class="cd-form" ng-if="option=='signin'">
+<form id="id-login-form" class="cd-form" ng-if="option=='signin'" ng-submit="logIn(user)">
 
     <p class="fieldset">
       <div class="social-wrap c">
         <button class="facebook" ng-click="loginWithFacebook();">Sign in <em>w/</em> Facebook</button>
-        <button class="facebook" ng-click="logOut();">Sign up <em>w/</em> Facebook</button>
         <google-plus-signin clientid="217381421837-mfsplrg87t3o2u9toscpgrbsoh5ev42m.apps.googleusercontent.com"></google-plus-signin>
       </div>
     </p>
@@ -63,12 +62,12 @@
 
     <p class="fieldset">
         <label class="image-replace cd-email" for="id_username">E-mail</label>
-        <input class="full-width has-padding has-border" id="id_username" type="email" name="username" placeholder="E-mail">
+        <input class="full-width has-padding has-border" id="id_username" type="email" name="username" placeholder="E-mail" ng-model="user.email">
     </p>
 
     <p class="fieldset">
         <label class="image-replace cd-password" for="id_password">Password</label>
-        <input class="full-width has-padding has-border" id="id_password" name="password" type="password" placeholder="Password">
+        <input class="full-width has-padding has-border" id="id_password" name="password" type="password" placeholder="Password" ng-model="user.password">
     </p>
 
 

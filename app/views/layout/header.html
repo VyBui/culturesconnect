@@ -14,11 +14,13 @@
                         </div>
                         <div class="col-md-8 row">
                            <div ng-if="currentUser == null">
-                              <a class="link col-md-6 meetUpHospitable" ng-click="clickToOpen('signin');">© Meet up with Hospitable Local Host</a>
-                              <a class="link col-md-6 becomeALocalCulture" ng-click="clickToOpen('signin');">© Become a Local Culture Ambassador</a>
+                              <a class="link col-md-5 meetUpHospitable" ng-click="clickToOpen('signin');">© Meet up with Hospitable Local Host</a>
+                              <a class="link col-md-5 becomeALocalCulture" ng-click="clickToOpen('signin');">© Become a Local Culture Ambassador</a>
+                              <a class="link col-md-2 becomeALocalCulture" ng-click="clickToOpen('signup');">Sign up</a>
                            </div>
                            <div ng-if="currentUser">
-                            <p>Hello<em>{{currentUser.attributes.username}}</em></p>
+                            <p class="link col-md-5 meetUpHospitable">Hello<em> {{currentUser.attributes.username}}</em></p>
+                            <p class="link col-md-5 becomeALocalCulture" ng-click="logOut();">Sign Out</em></p>
                            </div>
                         </div>
 

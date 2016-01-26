@@ -46,36 +46,6 @@ angular
     });
   }])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider ) {
-    // $routeProvider
-    //   .when('/', {
-    //     templateUrl: 'views/main.html',
-    //     controller: 'MainCtrl',
-    //     controllerAs: 'main'
-    //   })
-    //   //
-    //   .when('/about', {
-    //     templateUrl: 'views/about.html',
-    //     controller: 'AboutCtrl',
-    //     controllerAs: 'about'
-    //   })
-    //   /*Find Experience*/
-    //   .when('/searchExperience', {
-    //     templateUrl: 'views/experience/experience.html',
-    //     controller: 'AboutCtrl',
-    //     controllerAs: 'about'
-    //   })
-    //   /*local Host*/
-    //   .when('/localHost', {
-    //     templateUrl: 'views/localHost/main.html',
-    //     controller: 'LocalhostCtrl',
-    //     controllerAs: 'localhost'
-    //   })
-    //   // Sign up
-    //   .when('/UserauthenticationCtrl', {
-    //     templateUrl: 'views/experience/experience.html',
-    //     controller: 'AboutCtrl',
-    //     controllerAs: 'about'
-    //   })
       ///////////////////////////////////
       /// Route
       ///////////////////////////////////

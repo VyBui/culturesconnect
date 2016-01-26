@@ -44,7 +44,7 @@ angular.module('herokuTestApp')
 				publicReadACL.setWriteAccess( user.id, true);
 				publicReadACL.setReadAccess( user.id, true);
 				user.setACL(publicReadACL);
-				//$state.go('app.dashboard');
+				$state.go('app.localHost');
 			},
 			error: function(user, error) {
 				//alert("Unable to sign up:  " + error.code + " " + error.message);
@@ -74,7 +74,7 @@ angular.module('herokuTestApp')
 		$scope.backdrop = true;
 		$scope.promise = $http.get('http://httpbin.org/delay/3');
 
-		Parse.User.logIn(form.email.toLowerCase(), form.password, {
+		Parse.User.logIn(form.email, form.password, {
 			success: function(user) {
 				// Check roles
         if(!user.roleId != 'undefined') {
@@ -130,7 +130,9 @@ angular.module('herokuTestApp')
   */
 
   $scope.logOut = function() {
+    alert("a");
     Parse.User.logOut();
+    $state.go("app.homepage");
     $window.reload();
   }
 
