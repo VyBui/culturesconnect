@@ -1,0 +1,69 @@
+<form>
+  <div class="row">
+      <div class="col-md-6">
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Khách sẽ duy chuyển bằng phương tiện gì trong trải nghiệm của bạn?</label>
+          </div>
+          <div class="form-contact__item-long">
+              <select ng-model="step3.vehicle">
+                <option value="0">Đi bộ</option>
+                <option value="1">Xe đạp</option>
+                <option value="2">Xe máy</option>
+                <option value="3">Xe buýt</option>
+                <option value="4">Xe con</option>
+              </select>
+            </div>
+        </div>
+
+          <!-- cost -->
+          <div class="form-contact__fields-short">
+              <div class="form-contact__item-long">
+                <label>Tính giá cho trải nghiệm</label>
+              </div>
+            <div class="">
+                <span class="">
+                  <input type="text" class="" ng-model="step3.cost" placeholder="giá của trải nghiệm" />
+                </span>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+        <!-- language -->
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Bạn dùng ngôn ngữ nào để hướng dẫn khách?</label>
+          </div>
+          <div class="form-contact__item-long">
+              <select ng-model="step3.language">
+                <option value="0">Tiếng Việt</option>
+                <option value="1">Tiếng Anh</option>
+              </select>
+          </div>
+        </div>
+        <!-- support -->
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Bạn có cần hỗ trợ của người phiên dịch để hướng dẫn trải nghiệm? <strong>(lưu ý nếu có thêm 20% chi phí trải nghiệm được trích cho người phiên dịch)</strong></label>
+          </div>
+          <div class="form-contact__item-long">
+              <select ng-model="step3.support">
+                <option value="0">Có</option>
+                <option value="1">Không</option>
+              </select>
+            </div>
+        </div>
+        <!-- manager-->
+
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Bạn có thể quản lý được  nhóm tối đa bao nhiêu người trong 1 lần trải nghiệm?</label>
+          </div>
+          <div class="form-contact__item-long">
+              <input name="quantity" value="1" type="number" ng-model="step3.numberOfPeople" placeholder="Quantity">
+            </div>
+        </div>
+      </div>
+    </div>
+</form>

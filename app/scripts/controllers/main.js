@@ -8,7 +8,7 @@
  * Controller of the herokuTestApp
  */
 angular.module('herokuTestApp')
-  .controller('MainCtrl',[ '$scope', 'getDataMainPart2Part2', function ($scope, getDataMainPart2Part2) {
+  .controller('MainCtrl',[ '$scope', 'getDataMainPart2Part2', 'searchFactory', function ($scope, getDataMainPart2Part2, searchFactory) {
 
     $scope.loadImageForSlider = function() {
         getDataMainPart2Part2.getDatabaseP1()
@@ -48,4 +48,23 @@ angular.module('herokuTestApp')
         console.log("vao day");
         ngDialog.open({ template: 'popupTmpl.html',  plain: true });
     };
-  }]);
+
+    $scope.searchForExperience = function(searchForTheDestination, kindOfExperiences) {
+      if(searchForTheDestination != "" && typeof searchForTheDestination !== "undefined" && kindOfExperiences != "" && typeof kindOfExperiences !== "undefined") {
+        $scope.listCC = searchFactory.getDataWithBoth(searchForTheDestination, kindOfExperiences);
+        } 
+      else if(searchForTheDestination != "" && typeof searchForTheDestination !== "undefined") {
+        $scope.listCC = searchFactory.getDataWithPlace(searchForTheDestination);
+      }
+      else if(kindOfExperiences != "" && typeof kindOfExperiences !== "undefined") {
+        $scope.listCC = searchFactory.getDataWithKindOfCultural(kindOfExperiences);
+      }
+      else {
+        $scope.listCC = searchFactory.getDataWithoutParameters();
+        console.log($scope.listCC);
+      }
+      console.log("2");
+    };
+
+
+}]);

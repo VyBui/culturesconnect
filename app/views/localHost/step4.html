@@ -1,0 +1,156 @@
+<form class="questionform" name="form1">
+  <div class="form-contact__fields-short">
+    <div class="form-contact__item-long">
+      <label>What are the three special things about you that you would love to share
+          with foreign friends?</label>
+    </div>
+    <div class="form-block__item form-block__field-width-icon form-block__field--name">
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" ng-model="step1.firstSpecial" placeholder="first special thing" />
+        </span>
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" ng-model="step1.secondSpecial" placeholder="second" />
+        </span>
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" ng-model="step1.thirdSpecial" placeholder="third" />
+        </span>
+      </div>
+    </div>
+
+    <!-- -->
+    <div class="form-contact__fields-short">
+      <div class="form-contact__item-long">
+        <label>Why do you want to become a local culture ambassador?</label>
+      </div>
+      <div class="form-contact__item-long">
+          <span class="wpcf7-form-control-wrap your-name">
+            <textarea type="text" class="wpcf7-form-control" placeholder="" ng-model="step1.whyBecome" />
+          </span>
+        </div>
+      </div>
+      <!-- -->
+      <div class="form-contact__fields-short">
+        <div class="form-contact__item-long">
+          <label>What kind of cultural experiences will foreign friends have with you? Please choose:</label>
+        </div>
+        <div class="form-contact__item-long">
+            <span class="wpcf7-form-control-wrap your-name">
+              <select name="singleSelect" class="kindOfExperiences" ng-model="step1.kindOfExperiences" >
+                  <option class="level-0" value="1">Learning Vietnamese cuisine and dining with locals</option>
+                  <option class="level-0" value="2">Experiencing agricultural activities with locals</option>
+                  <option class="level-0" value="3">Making traditional handicraft products with locals</option>
+                  <option class="level-0" value="4">Experiencing traditional festivals and customs with locals</option>
+                  <option class="level-0" value="5">Experiencing off-the-beaten-track sightseeing tours with locals</option>
+          	</select>
+            </span>
+          </div>
+        </div>
+      <!-- -->
+      <div class="form-contact__fields-short">
+        <div class="form-contact__item-long">
+          <label>Where is your experience take place?</label>
+        </div>
+      <div class="form-contact__item-long">
+          <span class="wpcf7-form-control-wrap your-name">
+            <input type="text" class="wpcf7-form-control" placeholder="Please write a place of your experience" ng-model="step1.whereExperience" />
+          </span>
+        </div>
+      </div>
+</form>
+<form class="questionform">
+  <div class="form-contact__fields-short">
+    <div class="form-contact__item-long">
+      <label>Name</label>
+    </div>
+    <div class="form-contact__item-long">
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" placeholder="Please enter name" required="true" ng-model="step2.eName" />
+        </span>
+      </div>
+    </div>
+
+    <div>
+        <img ng-src="{{croppedDataUrl}}" />
+    </div>
+    <!--
+    <button ng-click="upload(croppedDataUrl)">Submit</button>
+  -->
+    <span class="progress" ng-show="progress >= 0">
+         <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+       </span>
+       <span ng-show="result">Upload Successful</span>
+    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+</form>
+<form>
+  <div class="row">
+      <div class="col-md-6">
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Khách sẽ duy chuyển bằng phương tiện gì trong trải nghiệm của bạn?</label>
+          </div>
+          <div class="form-contact__item-long">
+              <select ng-model="step3.vehicle">
+                <option value="0">Đi bộ</option>
+                <option value="1">Xe đạp</option>
+                <option value="2">Xe máy</option>
+                <option value="3">Xe buýt</option>
+                <option value="4">Xe con</option>
+              </select>
+            </div>
+        </div>
+
+          <!-- cost -->
+          <div class="form-contact__fields-short">
+              <div class="form-contact__item-long">
+                <label>Tính giá cho trải nghiệm</label>
+              </div>
+            <div class="">
+                <span class="">
+                  <input type="text" class="" ng-model="step3.cost" placeholder="giá của trải nghiệm" />
+                </span>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+        <!-- language -->
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Bạn dùng ngôn ngữ nào để hướng dẫn khách?</label>
+          </div>
+          <div class="form-contact__item-long">
+              <select ng-model="step3.language">
+                <option value="0">Tiếng Việt</option>
+                <option value="1">Tiếng Anh</option>
+              </select>
+          </div>
+        </div>
+        <!-- support -->
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Bạn có cần hỗ trợ của người phiên dịch để hướng dẫn trải nghiệm? <strong>(lưu ý nếu có thêm 20% chi phí trải nghiệm được trích cho người phiên dịch)</strong></label>
+          </div>
+          <div class="form-contact__item-long">
+              <select ng-model="step3.support">
+                <option value="0">Có</option>
+                <option value="1">Không</option>
+              </select>
+            </div>
+        </div>
+        <!-- manager-->
+
+        <div class="form-contact__fields-short">
+          <div class="form-contact__item-long">
+            <label>Bạn có thể quản lý được  nhóm tối đa bao nhiêu người trong 1 lần trải nghiệm?</label>
+          </div>
+          <div class="form-contact__item-long">
+              <input name="quantity" value="1" type="number" ng-model="step3.numberOfPeople" placeholder="Quantity">
+            </div>
+        </div>
+      </div>
+    </div>
+</form>
+<div>
+ <button ng-click="submitAllForm();">Submit</button>
+ <button>Cancel</button>
+</div>

@@ -1,5 +1,6 @@
 {
   "name": "herokutest",
+<<<<<<< HEAD
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -47,3 +48,10 @@
     "angular-ui-bootstrap": "~0.14.3"
   }
 }
+=======
+  "version": "0.0.0",
+  "dependencies": {
+    "statik": "~1.2.5"
+  }
+}
+>>>>>>> b3e2127f624a24586938588867c06ae2729ac57b

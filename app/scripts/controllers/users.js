@@ -76,7 +76,18 @@ angular.module('herokuTestApp')
 
 		Parse.User.logIn(form.email.toLowerCase(), form.password, {
 			success: function(user) {
-				$state.go('app.dashboard');
+				// Check roles
+        if(!user.roleId != 'undefined') {
+          switch (user.roleId) {
+            case 0:
+              $state.go("app.localHost");
+              break;
+            case 1:
+              $state.go("app.cultureConnector");
+            default:
+              $state.go("app.homepage");
+          }
+        }
 				// $scope.loginStatus = "Login successfully";
 				$scope.loginForgot = null;
 				$scope.promise = null;
@@ -107,7 +118,6 @@ angular.module('herokuTestApp')
               user.save();
             });
         } else {
-          $state.go("dashboard");
         }
       },
       error: function(user, error) {
@@ -121,11 +131,6 @@ angular.module('herokuTestApp')
 
   $scope.logOut = function() {
     Parse.User.logOut();
-    Parse.FacebookUtils.unlink(user, {
-      success: function(user) {
-        alert("The user is no longer associated with their Facebook account.");
-      }
-    });
     $window.reload();
   }
 

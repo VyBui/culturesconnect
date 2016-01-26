@@ -1,0 +1,59 @@
+<form class="questionform">
+  <div class="form-contact__fields-short">
+    <div class="form-contact__item-long">
+      <label>What are the three special things about you that you would love to share
+          with foreign friends?</label>
+    </div>
+    <div class="form-block__item form-block__field-width-icon form-block__field--name">
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" ng-model="step1.firstSpecial" placeholder="first special thing" />
+        </span>
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" ng-model="step1.secondSpecial" placeholder="second" />
+        </span>
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" ng-model="step1.thirdSpecial" placeholder="third" />
+        </span>
+      </div>
+    </div>
+
+    <!-- -->
+    <div class="form-contact__fields-short">
+      <div class="form-contact__item-long">
+        <label>Why do you want to become a local culture ambassador?</label>
+      </div>
+      <div class="form-contact__item-long">
+          <span class="wpcf7-form-control-wrap your-name">
+            <textarea type="text" class="wpcf7-form-control" placeholder="" ng-model="step1.whyBecome" />
+          </span>
+        </div>
+      </div>
+      <!-- -->
+      <div class="form-contact__fields-short">
+        <div class="form-contact__item-long">
+          <label>What kind of cultural experiences will foreign friends have with you? Please choose:</label>
+        </div>
+        <div class="form-contact__item-long">
+            <span class="wpcf7-form-control-wrap your-name">
+              <select name="singleSelect" class="kindOfExperiences" ng-model="step1.kindOfExperiences" >
+                  <option class="level-0" value="1">Learning Vietnamese cuisine and dining with locals</option>
+                  <option class="level-0" value="2">Experiencing agricultural activities with locals</option>
+                  <option class="level-0" value="3">Making traditional handicraft products with locals</option>
+                  <option class="level-0" value="4">Experiencing traditional festivals and customs with locals</option>
+                  <option class="level-0" value="5">Experiencing off-the-beaten-track sightseeing tours with locals</option>
+          	</select>
+            </span>
+          </div>
+        </div>
+      <!-- -->
+      <div class="form-contact__fields-short">
+        <div class="form-contact__item-long">
+          <label>Where is your experience take place?</label>
+        </div>
+      <div class="form-contact__item-long">
+          <span class="wpcf7-form-control-wrap your-name">
+            <input type="text" class="wpcf7-form-control" placeholder="Please write a place of your experience" ng-model="step1.whereExperience" />
+          </span>
+        </div>
+      </div>
+</form>

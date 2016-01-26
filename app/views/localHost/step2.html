@@ -1,0 +1,32 @@
+<form class="questionform">
+  <div class="form-contact__fields-short">
+    <div class="form-contact__item-long">
+      <label>Name</label>
+    </div>
+    <div class="form-contact__item-long">
+        <span class="wpcf7-form-control-wrap your-name">
+          <input type="text" class="wpcf7-form-control" placeholder="Please enter name" required="true" ng-model="step2.eName" />
+        </span>
+      </div>
+    </div>
+
+    <label>Crop Image And Upload</label>
+    <button ngf-select ng-model="picFile" accept="image/*">Select Picture</button>
+    <div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+             class="cropArea">
+          <img-crop image="picFile  | ngfDataUrl"
+            result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+          </img-crop>
+    </div>
+    <div>
+           <img ng-src="{{croppedDataUrl}}" ng-model="step2.croppedDataUrl" />
+    </div>
+    <!--
+    <button ng-click="upload(croppedDataUrl)">Submit</button>
+  -->
+    <span class="progress" ng-show="progress >= 0">
+         <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+       </span>
+       <span ng-show="result">Upload Successful</span>
+    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+</form>

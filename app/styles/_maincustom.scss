@@ -421,7 +421,6 @@ figcaption.wp-caption-text {
 
 .header {
     color: #fff;
-    background: #334960;
 }
 
 .header__info {
@@ -598,8 +597,11 @@ figcaption.wp-caption-text {
     }
 }
 
+.sologan {
+    color: #334960;
+}
+
 .footer {
-    background: #334960;
     color: #959da7;
 }
 
@@ -1073,7 +1075,7 @@ a:active {
 #logoLink img {
     max-height: 95px;
     max-width: 300px;
-    width: 52px;
+    width: 80px;
 }
 
 @media (max-width: 380px) {
