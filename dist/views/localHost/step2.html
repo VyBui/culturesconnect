@@ -1,36 +1,6 @@
-<form class="questionform" novalidate>
-  <div class="form-contact__fields-short">
-    <div class="form-contact__item-long">
-      <label>Name</label>
-    </div>
-    <div class="form-contact__item-long">
-        <span class="wpcf7-form-control-wrap your-name">
-          <input type="text" class="wpcf7-form-control" placeholder="Please enter name" required="true" ng-model="step2.eName" />
-        </span>
-      </div>
-    </div>
-
-    <label>Crop Image And Upload</label>
-    <button class="upload" ngf-select ng-model="step2.picFile" accept="image/*">Select Picture</button>
-    <div ngf-drop ng-model="step2.picFile" ngf-pattern="image/*"
-             class="cropArea">
-          <img-crop image="step2.picFile  | ngfDataUrl"
-            result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
-          </img-crop>
-    </div>
-    <div>
-        <img ng-src="{{croppedDataUrl}}" ng-model="step2.croppedDataUrl" />
-    </div>
-    <!--
+<form class="questionform" novalidate> <div class="form-contact__fields-short"> <div class="form-contact__item-long"> <label>Name</label> </div> <div class="form-contact__item-long"> <span class="wpcf7-form-control-wrap your-name"> <input type="text" class="wpcf7-form-control" placeholder="Please enter name" required ng-model="step2.eName"> </span> </div> </div> <label>Crop Image And Upload</label> <button class="upload" ngf-select ng-model="step2.picFile" accept="image/*">Select Picture</button> <div ngf-drop ng-model="step2.picFile" ngf-pattern="image/*" class="cropArea"> <img-crop image="step2.picFile  | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''"> </img-crop> </div> <div> <img ng-src="{{croppedDataUrl}}" ng-model="step2.croppedDataUrl"> </div> <!--
     <button ng-click="upload(croppedDataUrl)">Submit</button>
-  -->
-    <span class="progress" ng-show="progress >= 0">
-         <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
-       </span>
-       <span ng-show="result">Upload Successful</span>
-    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-</form>
-<!-- <form class="form-horizontal fv-form fv-form-bootstrap">
+  --> <span class="progress" ng-show="progress >= 0"> <div style="width:{{progress}}%" ng-bind="progress + '%'"></div> </span> <span ng-show="result">Upload Successful</span> <span class="err" ng-show="errorMsg">{{errorMsg}}</span> </form> <!-- <form class="form-horizontal fv-form fv-form-bootstrap">
   <div id="bookForm">
       <div class="form-group">
           <label class="col-xs-6 control-label">Add more images and description</label>
@@ -39,8 +9,7 @@
           </div>
       </div>
 
-      <!-- The template for adding new field -->
-      <!-- <div class="form-group hide" id="bookTemplate">
+      <!-- The template for adding new field --> <!-- <div class="form-group hide" id="bookTemplate">
           <div class="col-xs-4">
             <input type="file" class="upload" ngf-select ng-model="pictureToAdd.picture" name="subfiles"
                  accept="image/*" onchange="angular.element(this).scope().file_changed(this)" style="width: 100%">
@@ -58,28 +27,7 @@
             <a class="btn btn-primary" class="btn btn-default" ng-click="ByeByeBye();">Add</a>
         </div>
   </div>
-</form> -->
-<div class="form-group">
-    <label class="col-xs-6 control-label">Share more images</label>
-    <div class="col-xs-6 left">
-        <a class="btn btn-primary" ng-click="ByeByeBye()">Add more <i class="fa fa-plus"></i></a>
-    </div>
-</div>
-<fieldset class="form-group"  data-ng-repeat="pictureToAdd in step2.pictureToAdds">
-  <div class="col-xs-4">
-    <input type="file" class="upload" ngf-select ng-model="pictureToAdd.picture" name="subfiles"
-         accept="image/*" style="width: 100%">
-    <img ng-show="pictureToAdd.picture" ngf-thumbnail="pictureToAdd.picture" class="thumb">
-  </div>
-  <div class="col-xs-6">
-      <input type="text" class="form-control" name="description" ng-model="pictureToAdd.description" placeholder="Title" />
-  </div>
-  <div class="col-xs-2">
-      <button type="button" class="btn btn-default removeButton" ng-show="$last" ng-click="removeChoice()"><i class="fa fa-minus"></i></button>
-  </div>
-</fieldset>
-<script>
-// $(document).ready(function() {
+</form> --> <div class="form-group"> <label class="col-xs-6 control-label">Share more images</label> <div class="col-xs-6 left"> <a class="btn btn-primary" ng-click="ByeByeBye()">Add more <i class="fa fa-plus"></i></a> </div> </div> <fieldset class="form-group" data-ng-repeat="pictureToAdd in step2.pictureToAdds"> <div class="col-xs-4"> <input type="file" class="upload" ngf-select ng-model="pictureToAdd.picture" name="subfiles" accept="image/*" style="width: 100%"> <img ng-show="pictureToAdd.picture" ngf-thumbnail="pictureToAdd.picture" class="thumb"> </div> <div class="col-xs-6"> <input type="text" class="form-control" name="description" ng-model="pictureToAdd.description" placeholder="Title"> </div> <div class="col-xs-2"> <button type="button" class="btn btn-default removeButton" ng-show="$last" ng-click="removeChoice()"><i class="fa fa-minus"></i></button> </div> </fieldset> <script>// $(document).ready(function() {
 //   var image = {
 //             row: '.col-xs-4',   // The title is placed inside a <div class="col-xs-4"> element
 //             validators: {
@@ -144,5 +92,4 @@
 //           // Remove element containing the fields
 //           $row.remove();
 //       });
-// });
-</script>
+// });</script>

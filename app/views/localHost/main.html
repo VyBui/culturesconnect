@@ -1,24 +1,25 @@
 <article>
   <section>
-    <div class="container">
-      <multi-step-container steps="steps" class="simple-prev-next sliding-steps simple-prev-next">
-          <header class="localHost">
-              <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
-                  <span class="fa fa-chevron-left"></span>
-                  Previous
-              </button>
-
-              <strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"
-              class="fa" ng-class="$getActiveStep().valid ? 'fa-check' : 'fa-times'"></strong>
-
-              <button ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
-                  Next
-                  <span class="fa fa-chevron-right"></span>
-              </button>
-          </header>
-
-          <main step-container></main>
-      </multi-step-container>
-  </div>
+    <div class="container layout-container margin-top margin-bottom">
+        <div class="row">
+          <form name="outerForm" class="tab-form-demo">
+            <uib-tabset class="tours-tabs tabs-left row" vertical="true">
+              <uib-tab heading="{{step.title}}" ng-repeat="step in steps">
+                <ng-form name="nestedForm" ng-submit="submitAllForm();" novalidate>
+                  <div class="tours-tabs__content">
+                    <div class="tab-content hidden-xs col-md-9">
+                      <div class="tab-pane active in" id="tabdescription">
+                        <div class="tours-tabs__content padding-all">
+                          <div ng-include="step.templateUrl"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-form>
+              </uib-tab>
+            </uib-tabset>
+          </form>
+        </div>
+    </div>
   </section>
-</article
+</article>

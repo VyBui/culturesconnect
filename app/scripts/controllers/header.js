@@ -39,7 +39,6 @@ angular.module('herokuTestApp')
         if(typeof $scope.currentUser.attributes.authData !== 'undefined')
         {
           // facebook user
-          console.log($scope.currentUser);
         }
         // check if google+ user
         // check if parse user

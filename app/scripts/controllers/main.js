@@ -52,7 +52,7 @@ angular.module('herokuTestApp')
     $scope.searchForExperience = function(searchForTheDestination, kindOfExperiences) {
       if(searchForTheDestination != "" && typeof searchForTheDestination !== "undefined" && kindOfExperiences != "" && typeof kindOfExperiences !== "undefined") {
         $scope.listCC = searchFactory.getDataWithBoth(searchForTheDestination, kindOfExperiences);
-        } 
+        }
       else if(searchForTheDestination != "" && typeof searchForTheDestination !== "undefined") {
         $scope.listCC = searchFactory.getDataWithPlace(searchForTheDestination);
       }
@@ -63,7 +63,6 @@ angular.module('herokuTestApp')
         $scope.listCC = searchFactory.getDataWithoutParameters();
         console.log($scope.listCC);
       }
-      console.log("2");
     };
 
 

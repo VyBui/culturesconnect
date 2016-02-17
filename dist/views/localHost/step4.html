@@ -1,20 +1,12 @@
-<form class="questionform" ng-submit="submitAllForm();" novalidate>
-  <div class="form-contact__fields-short">
-    <div class="form-contact__item-long">
-      <label>What are the three special things about you that you would love to share
-          with foreign friends?</label>
-    </div>
-    <div class="form-block__item form-block__field-width-icon form-block__field--name">
-        <div class="form-group" ng-class="{'has-error': nestedForm.first.$invalid}">
-          <textarea type="text" name="first" class="wpcf7-form-control" ng-model="step1.firstSpecial" placeholder="first special thing" required disabled="true"/>
+<form class="questionform" ng-submit="submitAllForm();" novalidate> <div class="form-contact__fields-short"> <div class="form-contact__item-long"> <label>What are the three special things about you that you would love to share with foreign friends?</label> </div> <div class="form-block__item form-block__field-width-icon form-block__field--name"> <div class="form-group" ng-class="{'has-error': nestedForm.first.$invalid}"> <textarea type="text" name="first" class="wpcf7-form-control" ng-model="step1.firstSpecial" placeholder="first special thing" required disabled>
           <p ng-show="nestedForm.first.$invalid" class="help-block">this field is required.</p>
         </div>
         <div class="form-group" ng-class="{'has-error': nestedForm.second.$invalid}">
-          <textarea type="text" name="second" class="wpcf7-form-control" ng-model="step1.secondSpecial" placeholder="second" required disabled="true" />
+          <textarea type="text" name="second" class="wpcf7-form-control" ng-model="step1.secondSpecial" placeholder="second" required disabled>
           <p ng-show="nestedForm.second.$invalid" class="help-block">this field is required.</p>
         </div>
         <div class="form-group" ng-class="{'has-error': nestedForm.third.$invalid}">
-          <textarea type="text" name="third" class="wpcf7-form-control" ng-model="step1.thirdSpecial" placeholder="third" required disabled="true" />
+          <textarea type="text" name="third" class="wpcf7-form-control" ng-model="step1.thirdSpecial" placeholder="third" required disabled>
           <p ng-show="nestedForm.third.$invalid" class="help-block">this field is required.</p>
         </div>
       </div>
@@ -27,7 +19,7 @@
       </div>
       <div class="form-group" ng-class="{'has-error': nestedForm.whyBecome.$invalid}">
           <span class="wpcf7-form-control-wrap your-name">
-            <textarea type="text" name="whyBecome" class="wpcf7-form-control" placeholder="" ng-model="step1.whyBecome" disabled="true" required="true" />
+            <textarea type="text" name="whyBecome" class="wpcf7-form-control" placeholder="" ng-model="step1.whyBecome" disabled required>
             <p ng-show="nestedForm.whyBecome.$invalid" class="help-block">this field is required.</p>
           </span>
         </div>
@@ -39,12 +31,12 @@
         </div>
         <div class="form-group" ng-class="{'has-error': nestedForm.whyBecome.$invalid}">
             <span class="wpcf7-form-control-wrap">
-              <select name="kindOfExperiences" class="kindOfExperiences form-control" ng-model="step1.kindOfExperiences" required="true" disabled="true" >
-                  <option class="level-0" value="1">Learning Vietnamese cuisine and dining with locals</option>
-                  <option class="level-0" value="2">Experiencing agricultural activities with locals</option>
-                  <option class="level-0" value="3">Making traditional handicraft products with locals</option>
-                  <option class="level-0" value="4">Experiencing traditional festivals and customs with locals</option>
-                  <option class="level-0" value="5">Experiencing off-the-beaten-track sightseeing tours with locals</option>
+              <select name="kindOfExperiences" class="kindOfExperiences form-control" ng-model="step1.kindOfExperiences" required disabled>
+                  <option class="level-0" value="1">Learning Vietnamese cuisine and dining with locals
+                  <option class="level-0" value="2">Experiencing agricultural activities with locals
+                  <option class="level-0" value="3">Making traditional handicraft products with locals
+                  <option class="level-0" value="4">Experiencing traditional festivals and customs with locals
+                  <option class="level-0" value="5">Experiencing off-the-beaten-track sightseeing tours with locals
           	     </select>
               <p ng-show="nestedForm.kindOfExperiences.$invalid" class="help-block">this field is required.</p>
             </span>
@@ -57,7 +49,7 @@
         </div>
       <div class="form-contact__item-long form-group" ng-class="{'has-error': nestedForm.whereExperience.$invalid}">
           <span class="wpcf7-form-control-wrap">
-            <input type="text" name="whereExperience" class="wpcf7-form-control" placeholder="Please write a place of your experience" ng-model="step1.whereExperience" required="true" disabled="true" />
+            <input type="text" name="whereExperience" class="wpcf7-form-control" placeholder="Please write a place of your experience" ng-model="step1.whereExperience" required disabled>
             <p ng-show="nestedForm.whereExperience.$invalid" class="help-block">this field is required.</p>
           </span>
         </div>
@@ -70,7 +62,7 @@
         </div>
         <div class="form-contact__item-long" ng-class="{'has-error': nestedForm.eName.$invalid}">
             <span class="wpcf7-form-control-wrap your-name">
-              <input type="text" name="eName" class="wpcf7-form-control" placeholder="Please enter name" required="true" ng-model="step2.eName" disabled="true" />
+              <input type="text" name="eName" class="wpcf7-form-control" placeholder="Please enter name" required ng-model="step2.eName" disabled>
               <p ng-show="nestedForm.eName.$invalid" class="help-block">this field is required.</p>
             </span>
           </div>
@@ -79,16 +71,16 @@
         <div>
               <img ngf-thumbnail="step2.picFile" class="thumb">
         </div>
-      </div>
+      
         <!--
         <button ng-click="upload(croppedDataUrl)">Submit</button>
       -->
-      <fieldset class="form-group"  data-ng-repeat="pictureToAdd in step2.pictureToAdds">
+      <fieldset class="form-group" data-ng-repeat="pictureToAdd in step2.pictureToAdds">
         <div class="col-xs-4">
           <img ng-show="pictureToAdd.picture" ngf-thumbnail="pictureToAdd.picture" class="thumb">
         </div>
         <div class="col-xs-6">
-            <input type="text" disabled="true" class="form-control" name="description" ng-model="pictureToAdd.description" placeholder="Title" />
+            <input type="text" disabled class="form-control" name="description" ng-model="pictureToAdd.description" placeholder="Title">
         </div>
       </fieldset>
 
@@ -99,12 +91,12 @@
                   <label>Khách sẽ duy chuyển bằng phương tiện gì trong trải nghiệm của bạn?</label>
                 </div>
                 <div class="form-contact__item-long" ng-class="{'has-error': nestedForm.vehicle.$invalid}">
-                    <select ng-model="step3.vehicle" name="vehicle" class="form-control" required="true" disabled="true">
-                      <option value="0">Đi bộ</option>
-                      <option value="1">Xe đạp</option>
-                      <option value="2">Xe máy</option>
-                      <option value="3">Xe buýt</option>
-                      <option value="4">Xe con</option>
+                    <select ng-model="step3.vehicle" name="vehicle" class="form-control" required disabled>
+                      <option value="0">Đi bộ
+                      <option value="1">Xe đạp
+                      <option value="2">Xe máy
+                      <option value="3">Xe buýt
+                      <option value="4">Xe con
                     </select>
                     <p ng-show="nestedForm.vehicle.$invalid" class="help-block">this field is required.</p>
                   </div>
@@ -117,7 +109,7 @@
                     </div>
                   <div class="form-contact__item-long" ng-class="{'has-error': nestedForm.costEx.$invalid}">
                       <span class="">
-                        <input type="text" class="form-group" name="costEx" ng-model="step3.cost" placeholder="giá của trải nghiệm" required="true" disabled="true" />
+                        <input type="text" class="form-group" name="costEx" ng-model="step3.cost" placeholder="giá của trải nghiệm" required disabled>
                         <p ng-show="nestedForm.costEx.$invalid" class="help-block">this field is required.</p>
                       </span>
                     </div>
@@ -131,9 +123,9 @@
                   <label>Bạn dùng ngôn ngữ nào để hướng dẫn khách?</label>
                 </div>
                 <div class="form-contact__item-long" ng-class="{'has-error': nestedForm.language.$invalid}">
-                    <select ng-model="step3.language" name="language" class="form-control" disabled="true" required="true">
-                      <option value="0">Tiếng Việt</option>
-                      <option value="1">Tiếng Anh</option>
+                    <select ng-model="step3.language" name="language" class="form-control" disabled required>
+                      <option value="0">Tiếng Việt
+                      <option value="1">Tiếng Anh
                     </select>
                     <p ng-show="nestedForm.language.$invalid" class="help-block">this field is required.</p>
                 </div>
@@ -144,9 +136,9 @@
                   <label>Bạn có cần hỗ trợ của người phiên dịch để hướng dẫn trải nghiệm? <strong>(lưu ý nếu có thêm 20% chi phí trải nghiệm được trích cho người phiên dịch)</strong></label>
                 </div>
                 <div class="form-contact__item-long" ng-class="{'has-error': nestedForm.support.$invalid}">
-                    <select ng-model="step3.support" name="support" class="form-control" disabled="true" required="true">
-                      <option value="0">Có</option>
-                      <option value="1">Không</option>
+                    <select ng-model="step3.support" name="support" class="form-control" disabled required>
+                      <option value="0">Có
+                      <option value="1">Không
                     </select>
                     <p ng-show="nestedForm.support.$invalid" class="help-block">this field is required.</p>
                   </div>
@@ -157,8 +149,8 @@
                 <div class="form-contact__item-long">
                   <label>Bạn có thể quản lý được  nhóm tối đa bao nhiêu người trong 1 lần trải nghiệm?</label>
                 </div>
-                <div class="form-contact__item-long"  ng-class="{'has-error': nestedForm.numberOfPeople.$invalid}">
-                    <input name="numberOfPeople" type="number" ng-model="step3.numberOfPeople" placeholder="Number of people" required="true" disabled="true">
+                <div class="form-contact__item-long" ng-class="{'has-error': nestedForm.numberOfPeople.$invalid}">
+                    <input name="numberOfPeople" type="number" ng-model="step3.numberOfPeople" placeholder="Number of people" required disabled>
                     <p ng-show="nestedForm.numberOfPeople.$invalid" class="help-block">this field is required.</p>
                 </div>
               </div>

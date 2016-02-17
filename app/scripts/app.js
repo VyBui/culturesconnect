@@ -21,8 +21,9 @@ angular
     'ngDialog',
     'LocalStorageModule',
     'directive.g+signin',
-    'multiStepForm',
-    'ngFileUpload'
+    'ngFileUpload',
+    'ui.bootstrap',
+    'cfp.loadingBar'
   ])
   .run(['$rootScope', '$state', '$stateParams',function ($rootScope, $state, $stateParams){
     //set root state for checking state change on the navigator
@@ -45,7 +46,7 @@ angular
       }
     });
   }])
-  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider ) {
+  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider' , function($stateProvider, $urlRouterProvider, $httpProvider ) {
       ///////////////////////////////////
       /// Route
       ///////////////////////////////////

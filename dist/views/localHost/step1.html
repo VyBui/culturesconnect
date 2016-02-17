@@ -1,20 +1,12 @@
-<form class="questionform" name="stepForm" novalidate>
-  <div class="form-contact__fields-short">
-    <div class="form-contact__item-long">
-      <label>What are the three special things about you that you would love to share
-          with foreign friends?</label>
-    </div>
-    <div class="form-block__item form-block__field-width-icon form-block__field--name">
-        <div class="form-group" ng-class="{'has-error': stepForm.first.$invalid}">
-          <textarea type="text" name="first" class="wpcf7-form-control" ng-model="step1.firstSpecial" placeholder="first special thing" required />
+<form class="questionform" name="stepForm" novalidate> <div class="form-contact__fields-short"> <div class="form-contact__item-long"> <label>What are the three special things about you that you would love to share with foreign friends?</label> </div> <div class="form-block__item form-block__field-width-icon form-block__field--name"> <div class="form-group" ng-class="{'has-error': stepForm.first.$invalid}"> <textarea type="text" name="first" class="wpcf7-form-control" ng-model="step1.firstSpecial" placeholder="first special thing" required>
           <p ng-show="stepForm.first.$invalid && !stepForm.first.$pristine" class="help-block">this field is required.</p>
         </div>
         <div class="form-group" ng-class="{'has-error': stepForm.second.$invalid}">
-          <textarea type="text" name="second" class="wpcf7-form-control" ng-model="step1.secondSpecial" placeholder="second" required/>
+          <textarea type="text" name="second" class="wpcf7-form-control" ng-model="step1.secondSpecial" placeholder="second" required>
           <p ng-show="stepForm.second.$invalid && !stepForm.second.$pristine" class="help-block">this field is required.</p>
         </div>
         <div class="form-group" ng-class="{'has-error': stepForm.second.$invalid}">
-          <textarea type="text" class="wpcf7-form-control" ng-model="step1.thirdSpecial" placeholder="third" required />
+          <textarea type="text" class="wpcf7-form-control" ng-model="step1.thirdSpecial" placeholder="third" required>
           <p ng-show="stepForm.third.$invalid && !stepForm.third.$pristine" class="help-block">this field is required.</p>
         </div>
       </div>
@@ -27,7 +19,7 @@
       </div>
       <div class="form-contact__item-long">
           <div class="form-group" ng-class="{'has-error': stepForm.whyBecome.$invalid}">
-            <textarea type="text" name="whyBecome" class="wpcf7-form-control" placeholder="" ng-model="step1.whyBecome" required />
+            <textarea type="text" name="whyBecome" class="wpcf7-form-control" placeholder="" ng-model="step1.whyBecome" required>
             <p ng-show="stepForm.whyBecome.$invalid && !stepForm.whyBecome.$pristine" class="help-block">this field is required.</p>
           </div>
         </div>
@@ -39,12 +31,12 @@
         </div>
         <div class="form-contact__item-long">
             <div class="form-group" ng-class="{'has-error': stepForm.kindOfExperiences.$invalid}">
-              <select name="kindOfExperiences" class="kindOfExperiences form-control" ng-model="step1.kindOfExperiences" required >
-                  <option class="level-0" value="1">Learning Vietnamese cuisine and dining with locals</option>
-                  <option class="level-0" value="2">Experiencing agricultural activities with locals</option>
-                  <option class="level-0" value="3">Making traditional handicraft products with locals</option>
-                  <option class="level-0" value="4">Experiencing traditional festivals and customs with locals</option>
-                  <option class="level-0" value="5">Experiencing off-the-beaten-track sightseeing tours with locals</option>
+              <select name="kindOfExperiences" class="kindOfExperiences form-control" ng-model="step1.kindOfExperiences" required>
+                  <option class="level-0" value="1">Learning Vietnamese cuisine and dining with locals
+                  <option class="level-0" value="2">Experiencing agricultural activities with locals
+                  <option class="level-0" value="3">Making traditional handicraft products with locals
+                  <option class="level-0" value="4">Experiencing traditional festivals and customs with locals
+                  <option class="level-0" value="5">Experiencing off-the-beaten-track sightseeing tours with locals
           	</select>
             <p ng-show="stepForm.kindOfExperiences.$invalid  && !stepForm.kindOfExperiences.$pristine" class="help-block">this field is required.</p>
             </div>
@@ -57,7 +49,7 @@
         </div>
       <div class="form-contact__item-long">
           <div class="form-group" ng-class="{'has-error': stepForm.whereExperience.$invalid}">
-            <input type="text" class="wpcf7-form-control" placeholder="Please write a place of your experience" ng-model="step1.whereExperience" name="whereExperience" required />
+            <input type="text" class="wpcf7-form-control" placeholder="Please write a place of your experience" ng-model="step1.whereExperience" name="whereExperience" required>
             <p ng-show="stepForm.whereExperience.$invalid  && !stepForm.whereExperience.$pristine" class="help-block">this field is required.</p>
           </div>
         </div>
