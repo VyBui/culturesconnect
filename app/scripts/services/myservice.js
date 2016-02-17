@@ -77,28 +77,40 @@ angular.module('herokuTestApp')
       newExp.set("userId", user);
       newExp.set("eName", step2.eName);
       newExp.set("place", step1.whereExperience);
-      newExp.set("vehicleId", step3.vehicle);
-      newExp.set("numberOfPeople", step3.numberOfPeople);
-      newExp.set("languageId", step3.language);
-      newExp.set("translator", step3.translator);
+      newExp.set("vehicleId", parseInt(step3.vehicle));
+      newExp.set("numberOfPeople", parseInt(step3.numberOfPeople));
+      newExp.set("languageId", parseInt(step3.language));
+      newExp.set("translator", parseInt(step3.translator));
 
 
       newExp.save(null, {
-        success: function(data) {
-          if(typeof data.id !== 'undefined') {
-            console.log("vao day");
-            newPicture.set("path",  step2.picFile);
-            newPicture.set("userId",  user);
-            newPicture.set("expId", experience);
+        success: function(Expdata) {
+          if(typeof Expdata.id !== 'undefined') {
 
-            newPicture.save(null, {
-              success: function() {
-                console.log("success");
-              },
-              error: function() {
+            var parseFile = new Parse.File(step2.picFile.name, step2.picFile);
+            parseFile.save().then(
+           function(newImage)
+           {
+             if(typeof newImage._url !== 'undefined') {
+               newPicture.set("path",  newImage);
+               newPicture.set("userId",  user);
+               newPicture.set("expId", Expdata);
 
-              }
-            })
+               newPicture.save(null, {
+                 success: function() {
+                   console.log("success");
+                 },
+                 error: function() {
+
+                 }
+               });
+            }
+           },
+           function(error)
+           {
+             alert("error");
+           }
+         );
           }
         },
         error: function() {
